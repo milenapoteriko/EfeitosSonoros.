@@ -1,7 +1,16 @@
-function tocaSomRisada(){
-    document.querySelector("#som_tecla_risada").play();   
+function tocaSom(idElementoAudio){
+    document.querySelector(idElementoAudio).play();   
 }
-
-document.querySelectorAll('.tecla');
-
+const listaDeTeclas = document.querySelectorAll('.tecla');
+let contador = 0;
+//Estrutura de repetição - Enquanto
+while(contador<listaDeTeclas.length){
+    const tecla = listaDeTeclas[contador]
+    const instrumento = tecla.classList[1];
+    tecla.onclick = function(){
+        `#som_${instrumento}`;
+    }
+    contador = contador + 1;
+    console.log(instrumento);
+}
 
